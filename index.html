@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>博客</title>
+</head>
+<body>
+    <!-- 背景图 -->
+    <div class="banner w">
+        <img src="./images/bg.jpg" alt="">
+    </div>
+    <!-- 导航栏 -->
+     <div class="nav w">
+         <ul>
+             <li><a href="#">看不清</a></li>
+             <li><a href="#">B站</a></li>
+             <li><a href="#">Github</a></li>
+             <li><a href="#">个人网站</a></li>
+             <li class="use"><a href="#">
+                 <span><img src="./images/zz.jpg" alt=""></span>
+                 <p class="user">狐言乎的博客</p>
+                 <em class="tip">狐狸说壶里有湖</em>
+             </a></li>
+             <li><a href="#">后台管理</a></li>
+             <li><a href="#">写文章</a></li>
+             <li><a href="#">评论</a></li>
+             <li class="change"><a href="#">换一批</a></li>
+         </ul>
+         <div class="connect">
+             <a href="#"><img src="./images/qq.jpeg" alt=""></a>
+             <a href="#"><img src="./images/wx.jpeg" alt=""></a>
+         </div>
+     </div>
+     <!-- main -->
+     <div class="main w">
+         <div class="contain">
+         </div>
+         <div class="active">
+           <div class="weather">
+           </div>
+           <div class="search"></div>
+           <div class="message">
+
+           </div>
+           <div class="hot">
+            
+           
+           </div>
+           <div class="lable">
+
+           </div>
+           <div class="article">
+
+           </div>
+           <div class="address">
+             
+           </div>
+         </div>
+     </div>
+     <!-- page -->
+     <div class="page w">
+       <div class="containor">
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+       </div>
+     </div>
+</body>
+</html>
+<script src="./js/jQuery.min.js"></script>
+<script src="./js/template-web.js"></script>
+<script src="./js/masonry.js"></script>
+<script type="text/html" id="template_con">
+  {{each }}
+          <div class="item grid-item">
+            <span class="img"><img src="{{$value.image.path}}" alt="{{$value.image.mtime}}"></span>
+            <div class="content">
+              <em class="type">{{$value.type}}</em>
+              <h3 class="title">{{$value.title}}</h3>
+              <p class="desc">{{$value.desc}}</p>
+             <a href="{{$value.url}}"></a>
+             <p class="mtime">{{$value.mtime}}</p>
+              <div class="footer">
+               <span class="author"><a href="javascript:;">author: {{$value.author}}</a></span>
+               <span class="love_num">love: {{$value.love_num}}</span>
+              </div>
+              
+            </div>
+          </div>
+      {{/each}}
+</script>
+<script>
+    $(function() {
+
+       $.ajax({
+           url: '_api/data.json',
+           type: 'get',
+           dataType: 'json',
+           success: function(data) {
+              var result = template('template_con',data)
+              console.log(data);
+              $('.contain').append(result)
+              $('.contain').masonry({
+  itemSelector: '.item',
+});
+           }
+       })
+       
+    })
+</script>
+
+<!-- main模块 -->
+<script type="text/html" id="hot">
+  {{each}}
+ <span class="con">{{$value.con}}</span>
+ <span class="count">{{$value.count}}</span>
+ {{/each}}
+</script>
+<script>
+  $(function() {
+    $.ajax({
+    url: './_api/hot.json',
+    dataType: 'json',
+    success: function(data) {
+      var result = template('hot',data)
+      $('.hot').append(result)
+    }
+  })
+  })
+  
+</script>
+<!-- hot模块 -->
+

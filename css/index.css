@@ -1,0 +1,182 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f0f1f5;
+    height: 2000px;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+a:hover {
+    text-decoration: none;
+
+}
+.w {
+    width: 1500px;
+    margin: 0 auto;
+}
+.nav {
+    position: relative;
+    height: 80px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.nav ul li {
+    float: left;
+}
+.nav ul li p {
+    display: inline-block;
+}
+.nav ul li a {
+    display: inline-block;
+    width: 157px;
+    height: 100%;
+    font-size: 16px;
+    line-height: 80px;
+    text-align: center;
+}
+.nav ul .use {
+    position: relative;
+}
+.use {
+    margin-left: 85px;
+
+}
+.use span {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.use span img {
+    width: 80px;
+    height: 80px;
+}
+.use .user {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 800;
+}
+.use .tip {
+    position: absolute;
+    top: 22px;
+    left: -6px;
+}
+.nav .connect {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 80px;
+    height: 50px;
+    /* background-color: pink; */
+}
+.connect a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 3px solid pink;
+    overflow: hidden;
+}
+.connect a img {
+    width: 26px;
+    height: 26px;
+}
+.main {
+    clear: both;
+}
+.contain {
+    float: left;
+    width: 70%;
+    margin-bottom: 20px;
+}
+.item {
+    width: 47%;
+    padding: 20px;
+    margin: 10px 10px;
+    background-color: #fff;
+    float: left;
+    overflow: hidden;
+    cursor: pointer;
+}
+.item .img {
+    display: inline-block;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    
+}
+.item img {
+    width: 100%;
+    height: 100%;
+    transition: all .3s;
+
+}
+.item img:hover {
+    transform: scale(1.5);
+}
+.content .title {
+    margin-bottom: 20px;
+}
+.content .desc {
+    margin-bottom: 20px;
+}
+.item .love_num {
+    float: right;
+}
+.active {
+    float: right;
+    width: 30%;
+    height: 3000px;
+    margin-top: 10px;
+    background-color: pink;
+}
+.weather {
+    width: 100%;
+    height: 400px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.search {
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.message {
+    width: 100%;
+    height: 300px;
+    background-color: #fff;
+    margin-bottom: 20px;
+
+}
+.lable {
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.article {
+    width: 100%;
+    height: 300px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.address {
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+}
